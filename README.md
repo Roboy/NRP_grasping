@@ -26,6 +26,9 @@ cd $HBP/GazeboRosPackages
 catkin_make
 ```
 
+Adjust `GAZEBO_MODEL_PATH` and `MESH_WORKSPACE_PATH` in `smart_grasping_sandbox/launch/smart_grasping_sandbox.launch`
+
+
 ## Run
 1. Open the shadow experiment (do not start the simulation yet)
 2. Load robot description, start moveit and gazebo2moveit nodes
