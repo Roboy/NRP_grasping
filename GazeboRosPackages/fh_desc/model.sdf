@@ -1,0 +1,1417 @@
+<sdf version='1.6'>
+  <model name='smart_grasping_sandbox'>
+    <link name='base_link'>
+      <pose frame=''>0 -1 1 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>4</mass>
+        <inertia>
+          <ixx>0.00610633</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00610633</iyy>
+          <iyz>0</iyz>
+          <izz>0.01125</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ur_description/meshes/ur10/collision/base.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ur_description/meshes/ur10/visual/base.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='world_joint' type='revolute'>
+      <child>base_link</child>
+      <parent>world</parent>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    <link name='shoulder_link'>
+      <pose frame=''>0 -1 1.1273 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>7.778</mass>
+        <inertia>
+          <ixx>0.0314743</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0314743</iyy>
+          <iyz>0</iyz>
+          <izz>0.0218756</izz>
+        </inertia>
+      </inertial>
+      <collision name='shoulder_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ur_description/meshes/ur10/collision/shoulder.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='shoulder_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ur_description/meshes/ur10/visual/shoulder.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='shoulder_pan_joint' type='revolute'>
+      <child>shoulder_link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+          <effort>330</effort>
+          <velocity>2.16</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='upper_arm_link'>
+      <pose frame=''>0 -0.779059 1.1273 3.14159 1.57079 3.14159</pose>
+      <inertial>
+        <pose frame=''>0 0 0.306 0 -0 0</pose>
+        <mass>12.93</mass>
+        <inertia>
+          <ixx>0.421754</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.421754</iyy>
+          <iyz>0</iyz>
+          <izz>0.0363656</izz>
+        </inertia>
+      </inertial>
+      <collision name='upper_arm_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ur_description/meshes/ur10/collision/upperarm.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='upper_arm_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ur_description/meshes/ur10/visual/upperarm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='shoulder_lift_joint' type='revolute'>
+      <child>upper_arm_link</child>
+      <parent>shoulder_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+          <effort>330</effort>
+          <velocity>2.16</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='forearm_link'>
+      <pose frame=''>0.612 -0.950959 1.1273 3.14159 1.57079 3.14159</pose>
+      <inertial>
+        <pose frame=''>0 0 0.28615 0 -0 0</pose>
+        <mass>3.87</mass>
+        <inertia>
+          <ixx>0.11107</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.11107</iyy>
+          <iyz>0</iyz>
+          <izz>0.0108844</izz>
+        </inertia>
+      </inertial>
+      <collision name='forearm_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ur_description/meshes/ur10/collision/forearm.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='forearm_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ur_description/meshes/ur10/visual/forearm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='elbow_joint' type='revolute'>
+      <child>forearm_link</child>
+      <parent>upper_arm_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+          <effort>150</effort>
+          <velocity>3.15</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='wrist_1_link'>
+      <pose frame=''>1.1843 -0.950959 1.1273 3.14159 0 3.14159</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1.96</mass>
+        <inertia>
+          <ixx>0.00510825</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00510825</iyy>
+          <iyz>0</iyz>
+          <izz>0.0055125</izz>
+        </inertia>
+      </inertial>
+      <collision name='wrist_1_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ur_description/meshes/ur10/collision/wrist1.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='wrist_1_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ur_description/meshes/ur10/visual/wrist1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='wrist_1_joint' type='revolute'>
+      <child>wrist_1_link</child>
+      <parent>forearm_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+          <effort>54</effort>
+          <velocity>3.2</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='wrist_2_link'>
+      <pose frame=''>1.1843 -0.836059 1.1273 3.14159 0 3.14159</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1.96</mass>
+        <inertia>
+          <ixx>0.00510825</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00510825</iyy>
+          <iyz>0</iyz>
+          <izz>0.0055125</izz>
+        </inertia>
+      </inertial>
+      <collision name='wrist_2_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ur_description/meshes/ur10/collision/wrist2.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='wrist_2_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ur_description/meshes/ur10/visual/wrist2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='wrist_2_joint' type='revolute'>
+      <child>wrist_2_link</child>
+      <parent>wrist_1_link</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+          <effort>54</effort>
+          <velocity>3.2</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='wrist_3_link'>
+      <pose frame=''>1.1843 -0.836059 1.0116 3.14159 0 3.14159</pose>
+      <inertial>
+        <pose frame=''>0.000252 0.072377 0.002863 0 -0 0</pose>
+        <mass>0.379715</mass>
+        <inertia>
+          <ixx>0.00312102</ixx>
+          <ixy>-9.3841e-06</ixy>
+          <ixz>2.03179e-06</ixz>
+          <iyy>0.000751809</iyy>
+          <iyz>-7.87144e-05</iyz>
+          <izz>0.00323075</izz>
+        </inertia>
+      </inertial>
+      <collision name='wrist_3_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ur_description/meshes/ur10/collision/wrist3.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='wrist_3_link_fixed_joint_lump__ee_link_collision_1'>
+        <pose frame=''>-0 0.0822 0 0 -0 1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='wrist_3_link_fixed_joint_lump__H1_base_link_collision_2'>
+        <pose frame=''>0 0.1037 0 -1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/palm_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.002</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.5</mu>
+              <mu2>1.5</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wrist_3_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ur_description/meshes/ur10/visual/wrist3.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='wrist_3_link_fixed_joint_lump__H1_base_link_visual_1'>
+        <pose frame=''>0 0.1037 0 -1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/palm_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='wrist_3_link_fixed_joint_lump__H1_F1_palm_link_visual_2'>
+        <pose frame=''>-0.045 0.1037 0.025981 1.5708 0.785393 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_palm_link.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='wrist_3_link_fixed_joint_lump__H1_F2_palm_link_visual_3'>
+        <pose frame=''>0 0.1037 -0.029019 -1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_palm_link.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='wrist_3_link_fixed_joint_lump__H1_F3_palm_link_visual_4'>
+        <pose frame=''>0.045 0.1037 0.025981 1.5708 -0.785393 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_palm_link.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay/>
+      <velocity_decay/>
+      <velocity_decay/>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='wrist_3_joint' type='revolute'>
+      <child>wrist_3_link</child>
+      <parent>wrist_2_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+          <effort>54</effort>
+          <velocity>3.2</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='H1_F1_base_link'>
+      <pose frame=''>1.2293 -0.732194 0.985619 -1.5708 -0.762991 0</pose>
+      <inertial>
+        <pose frame=''>-0.000143 0.026569 0.053875 0 -0 0</pose>
+        <mass>0.174652</mass>
+        <inertia>
+          <ixx>0.000298373</ixx>
+          <ixy>-5.05752e-07</ixy>
+          <ixz>1.94983e-07</ixz>
+          <iyy>0.00029963</iyy>
+          <iyz>2.79565e-05</iyz>
+          <izz>0.00013489</izz>
+        </inertia>
+      </inertial>
+      <collision name='H1_F1_base_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_base_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.002</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.5</mu>
+              <mu2>1.5</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='H1_F1_base_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_base_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='H1_F1J1' type='revolute'>
+      <child>H1_F1_base_link</child>
+      <parent>wrist_3_link</parent>
+      <axis>
+        <xyz>-0 1 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>50</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='H1_F1_link_1'>
+      <pose frame=''>1.25349 -0.615364 0.960322 -1.5001 -0.762991 0</pose>
+      <inertial>
+        <pose frame=''>-0.000142 -0.001354 0.027761 0 -0 0</pose>
+        <mass>0.082776</mass>
+        <inertia>
+          <ixx>4.6107e-05</ixx>
+          <ixy>7.47741e-08</ixy>
+          <ixz>-2.25165e-07</ixz>
+          <iyy>5.27678e-05</iyy>
+          <iyz>-3.64603e-07</iyz>
+          <izz>2.896e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='H1_F1_link_1_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_prox_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.002</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.5</mu>
+              <mu2>1.5</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='H1_F1_link_1_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_prox_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='H1_F1J2' type='revolute'>
+      <child>H1_F1_link_1</child>
+      <parent>H1_F1_base_link</parent>
+      <axis>
+        <xyz>0.722772 0 0.691086</xyz>
+        <limit>
+          <lower>-1.39626</lower>
+          <upper>1.0472</upper>
+          <effort>50</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='H1_F1_link_2'>
+      <pose frame=''>1.25056 -0.555514 0.963385 -1.50697 -0.762991 0</pose>
+      <inertial>
+        <pose frame=''>0.000147 -0.001929 0.020669 0 -0 0</pose>
+        <mass>0.0360682</mass>
+        <inertia>
+          <ixx>1.45995e-05</ixx>
+          <ixy>-5.02031e-08</ixy>
+          <ixz>-1.65836e-07</ixz>
+          <iyy>1.46464e-05</iyy>
+          <iyz>-2.25421e-07</iyz>
+          <izz>4.03881e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='H1_F1_link_2_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_dist_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.002</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.5</mu>
+              <mu2>1.5</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='H1_F1_link_2_fixed_joint_lump__H1_F1_tip_collision_1'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/omd-d18-tip.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.002</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.5</mu>
+              <mu2>1.5</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='H1_F1_link_2_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_dist_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='H1_F1_link_2_fixed_joint_lump__H1_F1_tip_visual_1'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/omd-d18-tip.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay/>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='H1_F1J3' type='revolute'>
+      <child>H1_F1_link_2</child>
+      <parent>H1_F1_link_1</parent>
+      <axis>
+        <xyz>0.722772 0 0.691086</xyz>
+        <limit>
+          <lower>-1.0472</lower>
+          <upper>1.5708</upper>
+          <effort>50</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='H1_F2_base_link'>
+      <pose frame=''>1.1843 -0.732194 1.04062 1.5708 -0.022402 -3.14159</pose>
+      <inertial>
+        <pose frame=''>-0.000143 0.026569 0.053875 0 -0 0</pose>
+        <mass>0.174652</mass>
+        <inertia>
+          <ixx>0.000298373</ixx>
+          <ixy>-5.05752e-07</ixy>
+          <ixz>1.94983e-07</ixz>
+          <iyy>0.00029963</iyy>
+          <iyz>2.79565e-05</iyz>
+          <izz>0.00013489</izz>
+        </inertia>
+      </inertial>
+      <collision name='H1_F2_base_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_base_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.002</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.5</mu>
+              <mu2>1.5</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='H1_F2_base_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_base_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='H1_F2J1' type='revolute'>
+      <child>H1_F2_base_link</child>
+      <parent>wrist_3_link</parent>
+      <axis>
+        <xyz>-0 1 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>30</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='H1_F2_link_1'>
+      <pose frame=''>1.18508 -0.615364 1.07561 1.64149 -0.022402 -3.14159</pose>
+      <inertial>
+        <pose frame=''>-0.000142 -0.001354 0.027761 0 -0 0</pose>
+        <mass>0.082776</mass>
+        <inertia>
+          <ixx>4.6107e-05</ixx>
+          <ixy>7.47741e-08</ixy>
+          <ixz>-2.25165e-07</ixz>
+          <iyy>5.27678e-05</iyy>
+          <iyz>-3.64603e-07</iyz>
+          <izz>2.896e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='H1_F2_link_1_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_prox_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.002</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.5</mu>
+              <mu2>1.5</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='H1_F2_link_1_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_prox_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='H1_F2J2' type='revolute'>
+      <child>H1_F2_link_1</child>
+      <parent>H1_F2_base_link</parent>
+      <axis>
+        <xyz>-0.999749 -0 0.0224</xyz>
+        <limit>
+          <lower>-1.39626</lower>
+          <upper>1.0472</upper>
+          <effort>30</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='H1_F2_link_2'>
+      <pose frame=''>1.18499 -0.555514 1.07137 1.63463 -0.022402 -3.14159</pose>
+      <inertial>
+        <pose frame=''>0.000147 -0.001929 0.020669 0 -0 0</pose>
+        <mass>0.0360682</mass>
+        <inertia>
+          <ixx>1.45995e-05</ixx>
+          <ixy>-5.02031e-08</ixy>
+          <ixz>-1.65836e-07</ixz>
+          <iyy>1.46464e-05</iyy>
+          <iyz>-2.25421e-07</iyz>
+          <izz>4.03881e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='H1_F2_link_2_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_dist_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.002</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.5</mu>
+              <mu2>1.5</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='H1_F2_link_2_fixed_joint_lump__H1_F2_tip_collision_1'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/omd-d18-tip.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.002</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.5</mu>
+              <mu2>1.5</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='H1_F2_link_2_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_dist_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='H1_F2_link_2_fixed_joint_lump__H1_F2_tip_visual_1'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/omd-d18-tip.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay/>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='H1_F2J3' type='revolute'>
+      <child>H1_F2_link_2</child>
+      <parent>H1_F2_link_1</parent>
+      <axis>
+        <xyz>-0.999749 -0 0.0224</xyz>
+        <limit>
+          <lower>-1.0472</lower>
+          <upper>1.5708</upper>
+          <effort>30</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='H1_F3_base_link'>
+      <pose frame=''>1.1393 -0.732194 0.985619 -1.5708 0.807795 0</pose>
+      <inertial>
+        <pose frame=''>-0.000143 0.026569 0.053875 0 -0 0</pose>
+        <mass>0.174652</mass>
+        <inertia>
+          <ixx>0.000298373</ixx>
+          <ixy>-5.05752e-07</ixy>
+          <ixz>1.94983e-07</ixz>
+          <iyy>0.00029963</iyy>
+          <iyz>2.79565e-05</iyz>
+          <izz>0.00013489</izz>
+        </inertia>
+      </inertial>
+      <collision name='H1_F3_base_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_base_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.002</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.5</mu>
+              <mu2>1.5</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='H1_F3_base_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_base_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='H1_F3J1' type='revolute'>
+      <child>H1_F3_base_link</child>
+      <parent>wrist_3_link</parent>
+      <axis>
+        <xyz>-0 1 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>30</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='H1_F3_link_1'>
+      <pose frame=''>1.114 -0.615364 0.961431 -1.5001 0.807795 0</pose>
+      <inertial>
+        <pose frame=''>-0.000142 -0.001354 0.027761 0 -0 0</pose>
+        <mass>0.082776</mass>
+        <inertia>
+          <ixx>4.6107e-05</ixx>
+          <ixy>7.47741e-08</ixy>
+          <ixz>-2.25165e-07</ixz>
+          <iyy>5.27678e-05</iyy>
+          <iyz>-3.64603e-07</iyz>
+          <izz>2.896e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='H1_F3_link_1_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_prox_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.002</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.5</mu>
+              <mu2>1.5</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='H1_F3_link_1_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_prox_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='H1_F3J2' type='revolute'>
+      <child>H1_F3_link_1</child>
+      <parent>H1_F3_base_link</parent>
+      <axis>
+        <xyz>0.691094 0 -0.722765</xyz>
+        <limit>
+          <lower>-1.39626</lower>
+          <upper>1.0472</upper>
+          <effort>30</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='H1_F3_link_2'>
+      <pose frame=''>1.11707 -0.555514 0.96436 -1.50697 0.807795 0</pose>
+      <inertial>
+        <pose frame=''>0.000147 -0.001929 0.020669 0 -0 0</pose>
+        <mass>0.0360682</mass>
+        <inertia>
+          <ixx>1.45995e-05</ixx>
+          <ixy>-5.02031e-08</ixy>
+          <ixz>-1.65836e-07</ixz>
+          <iyy>1.46464e-05</iyy>
+          <iyz>-2.25421e-07</iyz>
+          <izz>4.03881e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='H1_F3_link_2_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_dist_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.002</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.5</mu>
+              <mu2>1.5</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='H1_F3_link_2_fixed_joint_lump__H1_F3_tip_collision_1'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/omd-d18-tip.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.002</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.5</mu>
+              <mu2>1.5</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='H1_F3_link_2_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/v2/finger_dist_link_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='H1_F3_link_2_fixed_joint_lump__H1_F3_tip_visual_1'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://fh_desc/meshes/omd-d18-tip.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay/>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='H1_F3J3' type='revolute'>
+      <child>H1_F3_link_2</child>
+      <parent>H1_F3_link_1</parent>
+      <axis>
+        <xyz>0.691094 0 -0.722765</xyz>
+        <limit>
+          <lower>-1.0472</lower>
+          <upper>1.5708</upper>
+          <effort>30</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <plugin name='ros_control' filename='libgazebo_ros_control.so'>
+      <robotNamespace>/MYROBOT</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+    <static>0</static>
+    <plugin name='imu_controller' filename='libgazebo_ros_imu.so'>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>50</updateRate>
+      <topicName>imu/data</topicName>
+      <serviceName>imu/is_calibrated</serviceName>
+      <gaussianNoise>2.89e-08</gaussianNoise>
+      <xyzOffsets>0 0 0</xyzOffsets>
+      <rpyOffsets>0 0 0</rpyOffsets>
+      <bodyName>wrist_3_link</bodyName>
+      <xyzOffset>-0.0005 -0.0802 -2.44824e-15</xyzOffset>
+      <rpyOffset>-0.0411233 -0.0274156 -1.61192</rpyOffset>
+    </plugin>
+  </model>
+</sdf>

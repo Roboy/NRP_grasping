@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig"
+     xsi:schemaLocation="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig ../ExDConfFile.xsd">
+    <name>Shadow grasping</name>
+    <thumbnail>ExDTemplateHusky.jpg</thumbnail>
+    <description>This experiment loads the UR10 arm with the shadow hand in the virtual lab.</description>
+    <tags>grasping</tags>
+    <timeout>840</timeout>
+    <configuration type="3d-settings" src="grasping.ini"/>
+    <configuration type="brainvisualizer" src="brainvisualizer.json"/>
+	<configuration type="user-interaction-settings" src="ExDTemplateHusky.uis"/>
+    <maturity>production</maturity>
+    <environmentModel src="shadow_virtuallab/shadow_virtuallab.sdf">
+        <robotPose x="0.0" y="0.0" z="0.03" roll="0.0" pitch="-0.0" yaw="0.0"/>
+    </environmentModel>
+    <bibiConf src="grasping.bibi"/>
+    <cameraPose>
+        <cameraPosition x="4.5" y="0" z="1.8"/>
+        <cameraLookAt x="0" y="0" z="0.6"/>
+    </cameraPose>
+    <!-- <rosLaunch src="smart_grasping_sandbox.launch"/> -->
+</ExD>
