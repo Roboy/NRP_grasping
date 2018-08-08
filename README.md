@@ -12,9 +12,13 @@ pip2.7 install tensorflow keras h5py sklearn bokeh bayesian-optimization pandas
 ## Setup & compile
 ```
 cd NRP_grasping
+git submodule init
+git submodule update --recursive
 cp GazeboRosPackages/* $HBP/GazeboRosPackages/src -a
 cp Models/* $HBP/Models/ -a # add folder names in models.txt if needed
 cp Experiments/* $HBP/Experiments -a
+cd $HBP/Models
+./create-symlinks.sh
 ```
 
 ```
