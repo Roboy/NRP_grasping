@@ -17,6 +17,8 @@ git submodule update --recursive
 cp GazeboRosPackages/* $HBP/GazeboRosPackages/src -a
 cp Models/* $HBP/Models/ -a # add folder names in models.txt if needed
 cp Experiments/* $HBP/Experiments -a
+cd $HBP/Models
+./create-symlinks.sh
 ```
 
 ```
