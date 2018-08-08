@@ -1,0 +1,15 @@
+[submodule "gazebo2rviz"]
+path = "GazeboRosPackages/gazebo2rviz"
+url = https://github.com/Roboy/gazebo2rviz.git
+
+[submodule "pysdf"]
+path = "GazeboRosPackages/pysdf"
+url = https://github.com/Roboy/pysdf.git
+
+[submodule "universal_robot"]
+path = "GazeboRosPackages/universal_robot"
+url = https://github.com/Roboy/universal_robot.git
+
+[submodule "ros_controllers"]
+path = "GazeboRosPackages/ros_controllers"
+url = https://github.com/shadow-robot/ros_controllers.git
