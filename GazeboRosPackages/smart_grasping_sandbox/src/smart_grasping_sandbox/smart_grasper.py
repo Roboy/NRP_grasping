@@ -4,7 +4,7 @@
 import rospy
 from std_srvs.srv import Empty
 from gazebo_msgs.srv import GetModelState, SetModelConfiguration, DeleteModel, \
-    SpawnModel
+    SpawnEntity
 from geometry_msgs.msg import Pose
 from controller_manager_msgs.srv import SwitchController, SwitchControllerRequest
 from moveit_msgs.msg import PlanningScene, PlanningSceneComponents
@@ -63,8 +63,8 @@ class SmartGrasper(object):
 
         rospy.wait_for_service("/gazebo/delete_model")
         self.__delete_model = rospy.ServiceProxy("/gazebo/delete_model", DeleteModel)
-        rospy.wait_for_service("/gazebo/spawn_sdf_model")
-        self.__spawn_model = rospy.ServiceProxy("/gazebo/spawn_sdf_model", SpawnModel)
+        rospy.wait_for_service("/gazebo/spawn_sdf_entity")
+        self.__spawn_model = rospy.ServiceProxy("/gazebo/spawn_sdf_entity", SpawnEntity)
 
         rospy.wait_for_service('/get_planning_scene', 10.0)
         self.__get_planning_scene = rospy.ServiceProxy('/get_planning_scene', GetPlanningScene)
