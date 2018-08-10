@@ -352,7 +352,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/palm_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/palm_link_simple.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -387,7 +387,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/palm_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/palm_link_simple.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -402,7 +402,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_palm_link.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_palm_link.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -417,7 +417,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_palm_link.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_palm_link.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -432,7 +432,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_palm_link.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_palm_link.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -488,7 +488,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_base_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_base_link_simple.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -514,7 +514,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_base_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_base_link_simple.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -577,7 +577,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_prox_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_prox_link_simple.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -603,7 +603,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_prox_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_prox_link_simple.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -666,7 +666,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_dist_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_dist_link_simple.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -692,7 +692,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/omd-d18-tip.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/omd-d18-tip.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -718,7 +718,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_dist_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_dist_link_simple.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -733,7 +733,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/omd-d18-tip.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/omd-d18-tip.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -797,7 +797,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_base_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_base_link_simple.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -823,7 +823,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_base_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_base_link_simple.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -886,7 +886,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_prox_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_prox_link_simple.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -912,7 +912,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_prox_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_prox_link_simple.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -975,7 +975,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_dist_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_dist_link_simple.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1001,7 +1001,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/omd-d18-tip.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/omd-d18-tip.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1027,7 +1027,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_dist_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_dist_link_simple.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -1042,7 +1042,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/omd-d18-tip.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/omd-d18-tip.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -1106,7 +1106,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_base_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_base_link_simple.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1132,7 +1132,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_base_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_base_link_simple.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -1195,7 +1195,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_prox_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_prox_link_simple.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1221,7 +1221,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_prox_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_prox_link_simple.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -1284,7 +1284,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_dist_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_dist_link_simple.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1310,7 +1310,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/omd-d18-tip.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/omd-d18-tip.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1336,7 +1336,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/v2/finger_dist_link_simple.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/v2/finger_dist_link_simple.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -1351,7 +1351,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://fh_desc/meshes/omd-d18-tip.dae</uri>
+            <uri>model://ur_description/meshes/fh_desc/omd-d18-tip.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -1396,10 +1396,10 @@
         </ode>
       </physics>
     </joint>
-    <plugin name='ros_control' filename='libgazebo_ros_control.so'>
+    <!-- <plugin name='ros_control' filename='libgazebo_ros_control.so'>
       <robotNamespace></robotNamespace>
       <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-    </plugin>
+    </plugin> -->
     <static>0</static>
     <plugin name='imu_controller' filename='libgazebo_ros_imu.so'>
       <alwaysOn>true</alwaysOn>
