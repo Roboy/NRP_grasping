@@ -42,5 +42,6 @@ Adjust `GAZEBO_MODEL_PATH` and `MESH_WORKSPACE_PATH` in `smart_grasping_sandbox/
 4. Start simulation in NRP
 5. Fire up python sample RL python script
   ```
-  rosrun smart_grasping_sandbox RL-grasp.py
+  roscd smart_grasping_sandbox/scripts
+  python RL-hand.py
   ```
