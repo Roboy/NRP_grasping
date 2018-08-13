@@ -30,17 +30,22 @@ Adjust `GAZEBO_MODEL_PATH` and `MESH_WORKSPACE_PATH` in `smart_grasping_sandbox/
 
 
 ## Run
-1. Open the shadow experiment (do not start the simulation yet)
+1. Starte the Neurorobotics Platform
+  ```
+  cle-start
+  cle-frontend
+  ```
 2. Load robot description, start moveit and gazebo2moveit nodes
   ```
   roslaunch smart_grasping_sandbox smart_grasping_sandbox.launch
   ```
-3. Load controllers
+3. Open the shadow experiment (do not start the simulation yet)
+4. Load controllers
   ```
   roslaunch fh_desc controllers.launch
   ```
-4. Start simulation in NRP
-5. Fire up python sample RL python script
+5. Start simulation in NRP
+6. Fire up python sample RL python script
   ```
   roscd smart_grasping_sandbox/scripts
   python RL-hand.py
